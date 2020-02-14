@@ -1,0 +1,11 @@
+$("#vote-actions-<%= @post.id %> .score").text("<%= @post.score %>");
+
+$("#vote-actions-<%= @post.id %> .upvote, #vote-actions-<%= @post.id %> .downvote").removeClass('active')
+
+<% if @new_vote %>
+    <% if @is_upvote %>
+        $("#vote-actions-<%= @post.id %> .upvote").addClass('active')
+    <% else %>
+        $("#vote-actions-<%= @post.id %> .downvote").addClass('active')
+    <% end %>
+<% end %>
